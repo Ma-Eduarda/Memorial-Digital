@@ -1,16 +1,17 @@
 import { useState, useMemo, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, MapPin, ArrowRight, Landmark, ChevronRight, ChevronLeft  } from 'lucide-react';
+import { Search, MapPin, ArrowRight, Landmark, ChevronRight, ChevronLeft } from 'lucide-react';
 import MemorialCard from '../components/MemorialCard';
 import Button from '../components/Button';
 import { memoriaisRecentes, personalidadesImportantes } from '../data/sampleData';
 import styles from './HomePage.module.css';
+import mapaImg from '../assets/mapaExemplo.png';
 
 // Junta todos os memoriais para pesquisa
-  const allMemorials = [
-    ...personalidadesImportantes,
-    ...memoriaisRecentes,
-  ];
+const allMemorials = [
+  ...personalidadesImportantes,
+  ...memoriaisRecentes,
+];
 
 
 export default function HomePage() {
@@ -22,7 +23,7 @@ export default function HomePage() {
 
   const scrollCarousel = (ref, direction) => {
     if (ref.current) {
-      const scrollAmount = direction === 'left' ? -320 : 320; 
+      const scrollAmount = direction === 'left' ? -320 : 320;
       ref.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
@@ -49,9 +50,9 @@ export default function HomePage() {
       {/* Hero Institucional  */}
       <section className={styles.heroIntegrated}>
         <div className={styles.integratedBackground}>
-          <img 
-            src="https://images.pexels.com/photos/116909/pexels-photo-116909.jpeg?auto=compress&cs=tinysrgb&w=1200" 
-            alt="Textura Memorial" 
+          <img
+            src="https://images.pexels.com/photos/116909/pexels-photo-116909.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Textura Memorial"
             className={styles.integratedImage}
           />
           <div className={styles.integratedOverlay}></div>
@@ -119,8 +120,8 @@ export default function HomePage() {
           </div>
 
           <div className={styles.carouselWrapper}>
-            <button 
-              className={`${styles.navButton} ${styles.navLeft}`} 
+            <button
+              className={`${styles.navButton} ${styles.navLeft}`}
               onClick={() => scrollCarousel(historicalRef, 'left')}
               aria-label="Rolar para a esquerda"
             >
@@ -137,8 +138,8 @@ export default function HomePage() {
               ))}
             </div>
 
-            <button 
-              className={`${styles.navButton} ${styles.navRight}`} 
+            <button
+              className={`${styles.navButton} ${styles.navRight}`}
               onClick={() => scrollCarousel(historicalRef, 'right')}
               aria-label="Rolar para a direita"
             >
@@ -152,11 +153,11 @@ export default function HomePage() {
       <section className={styles.mapSectionBlue}>
         <div className={styles.container}>
           <div className={styles.mapGridBlue}>
-            
+
             <div className={styles.mapImageWrapperBlue}>
               <img
-                src="src/assets/mapaExemplo.png"
-                alt="Mapa de Quadras"
+                src={mapaImg}
+                alt="Vista aérea do Cemitério"
                 className={styles.mapPreviewBlue}
               />
             </div>
@@ -164,17 +165,17 @@ export default function HomePage() {
             <div className={styles.mapContentBlue}>
               <h2>Mapa do Cemitério</h2>
               <p>
-                Utilize o sistema de mapeamento digital para localizar quadras, 
+                Utilize o sistema de mapeamento digital para localizar quadras,
                 lotes e setores do Cemitério Público São Miguel.
               </p>
-              
+
               <div className={styles.mapFeaturesBlue}>
                 <div className={styles.mapFeatureBlue}>
                   <MapPin size={20} color="#ffd700" />
                   <span>Mapeamento dos sepultamentos</span>
                 </div>
               </div>
-              
+
               <Link to="/mapa">
                 <Button variant="secondary" size="large" style={{ background: 'white', color: '#004c99' }}>
                   Acessar Mapa Digital
@@ -205,8 +206,8 @@ export default function HomePage() {
           </div>
 
           <div className={styles.carouselWrapper}>
-            <button 
-              className={`${styles.navButton} ${styles.navLeft}`} 
+            <button
+              className={`${styles.navButton} ${styles.navLeft}`}
               onClick={() => scrollCarousel(recentRef, 'left')}
             >
               <ChevronLeft size={24} />
@@ -222,8 +223,8 @@ export default function HomePage() {
               ))}
             </div>
 
-            <button 
-              className={`${styles.navButton} ${styles.navRight}`} 
+            <button
+              className={`${styles.navButton} ${styles.navRight}`}
               onClick={() => scrollCarousel(recentRef, 'right')}
             >
               <ChevronRight size={24} />
@@ -231,7 +232,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
+
     </div>
   );
 }

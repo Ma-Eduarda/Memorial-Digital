@@ -3,6 +3,7 @@ import { MapPin, Navigation, Info, Layers, ZoomIn, ZoomOut } from 'lucide-react'
 import Button from '../components/Button';
 import { personalidadesImportantes, memoriaisRecentes } from '../data/sampleData';
 import styles from './MapPage.module.css';
+import mapaImg from '../assets/mapaExemplo.png';
 
 export default function MapPage() {
     const [selectedSector, setSelectedSector] = useState(null);
@@ -39,7 +40,7 @@ export default function MapPage() {
                             <div className={styles.map}>
                                 <div className={styles.mapImage}>
                                     <img
-                                        src="src/assets/mapaExemplo.png?auto=compress&cs=tinysrgb&w=1200"
+                                        src={mapaImg}
                                         alt="Vista aérea do Cemitério"
                                     />
                                     <div className={styles.mapOverlay} />

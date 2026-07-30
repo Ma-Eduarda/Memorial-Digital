@@ -83,7 +83,7 @@ export function deleteMemorial(id) {
 
 export function getMemorialById(id) {
     const lista = getMemoriais();
-    return lista.find(m => m.id === id) || null;
+    return lista.find(m => String(m.id) === String(id)) || null;
 }
 
 export function getMemoriaisPorTumulo(localizacao) {
