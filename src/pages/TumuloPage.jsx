@@ -36,11 +36,11 @@ export default function TumuloPage() {
 
         <header className={styles.tombHeader}>
           <div className={styles.tombIcon}>
-            <MapPin size={32} />
+            <MapPin size={28} />
           </div>
           <h1 className={styles.tombTitle}>{decoded}</h1>
           <p className={styles.tombSubtitle}>
-            {pessoas.length} pessoa{pessoas.length !== 1 ? 's' : ''} memorial{pessoas.length !== 1 ? 'es' : ''}
+            {pessoas.length} pessoa{pessoas.length !== 1 ? 's' : ''} neste lote
           </p>
         </header>
 
@@ -86,10 +86,6 @@ export default function TumuloPage() {
             </Link>
           ))}
         </div>
-
-        <footer className={styles.footer}>
-          <p>Cemitério São Miguel — Memorial Digital</p>
-        </footer>
       </div>
     </div>
   );
