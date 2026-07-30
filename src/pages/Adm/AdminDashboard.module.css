@@ -195,6 +195,10 @@ h2 {
     border-bottom: 1px solid #eaeaea;
 }
 
+.registroHeader {
+    text-align: center;
+}
+
 .table td {
     padding: 16px;
     border-bottom: 1px solid #eaeaea;

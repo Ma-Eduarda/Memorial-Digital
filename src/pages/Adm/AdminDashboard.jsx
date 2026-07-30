@@ -105,7 +105,7 @@ export default function AdminDashboard() {
                                         <tr>
                                             <th>Nome do Falecido</th>
                                             <th>Localização</th>
-                                            <th>Registro</th>
+                                            <th className={styles.registroHeader}>Registro</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -131,7 +131,7 @@ export default function AdminDashboard() {
                                                 <td className={styles.timeCell}>
                                                     <span className={styles.timeContent}>
                                                         <Clock size={16} className={styles.clockIcon} />
-                                                        Recentemente
+                                                        {memorial.data || '—'}
                                                     </span>
                                                 </td>
                                             </tr>
