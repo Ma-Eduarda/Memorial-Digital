@@ -781,3 +781,44 @@
     }
 
 }
+
+/* --- CONFIGURAÇÕES PARA A IMPRESSORA --- */
+@media print {
+    /* 1. Esconde a Sidebar (pela tag) e o Conteúdo Principal */
+    aside,
+    .mainContent,
+    .closeBtn,
+    .saveBtn {
+        display: none !important;
+    }
+
+    /* 2. Tira o layout Flexbox que estava empurrando para a direita */
+    .adminLayout {
+        display: block !important;
+        background: white !important;
+    }
+
+    /* 3. Transforma o fundo transparente do modal em uma folha branca limpa */
+    .modalOverlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: white !important;
+        backdrop-filter: none !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+        padding-top: 40px !important;
+        margin: 0 !important;
+    }
+
+    /* 4. Estilo de placa profissional para o QR Code */
+    .modalContentSmall {
+        box-shadow: none !important;
+        border: 2px solid #003366 !important;
+        padding: 40px !important;
+        margin: 0 !important;
+    }
+}

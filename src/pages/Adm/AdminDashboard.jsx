@@ -7,6 +7,20 @@ import styles from './AdminDashboard.module.css';
 export default function AdminDashboard() {
     const memoriais = getMemoriais();
     const ultimosCadastros = memoriais.slice(0, 3);
+    const quadras = [...new Set(
+        memoriais
+            .map((memorial) => memorial.localizacao?.match(/Quadra\s+([^,]+)/i)?.[1]?.trim().toUpperCase())
+            .filter(Boolean)
+    )];
+    const lotes = [...new Set(
+        memoriais
+            .map((memorial) => memorial.localizacao?.match(/Lote\s+([^,]+)/i)?.[1]?.trim())
+            .filter(Boolean)
+            .map((lote, index) => {
+                const quadra = memoriais[index]?.localizacao?.match(/Quadra\s+([^,]+)/i)?.[1]?.trim().toUpperCase();
+                return quadra ? `${quadra}-${lote}` : lote;
+            })
+    )];
 
     return (
         <div className={styles.adminLayout}>
@@ -30,6 +44,24 @@ export default function AdminDashboard() {
                                 <p>Memoriais Cadastrados</p>
                             </div>
                             
+                        </div>
+                        <div className={styles.statCard}>
+                            <div className={styles.statIcon} style={{ background: '#e6f0ff', color: '#0066cc' }}>
+                                <Map size={28} />
+                            </div>
+                            <div className={styles.statInfo}>
+                                <h3>{quadras.length}</h3>
+                                <p>Quadras Cadastradas</p>
+                            </div>
+                        </div>
+                        <div className={styles.statCard}>
+                            <div className={styles.statIcon} style={{ background: '#e6f0ff', color: '#0066cc' }}>
+                                <MapPin size={28} />
+                            </div>
+                            <div className={styles.statInfo}>
+                                <h3>{lotes.length}</h3>
+                                <p>Lotes Cadastrados</p>
+                            </div>
                         </div>
                     </div>
 
@@ -80,12 +112,14 @@ export default function AdminDashboard() {
                                         {ultimosCadastros.map(memorial => (
                                             <tr key={memorial.id}>
                                                 <td className={styles.nameCell}>
+                                                    <div className={styles.nameContent}>
                                                     <div className={styles.avatar}>
                                                         <img src={memorial.imagem} alt={memorial.nome} />
                                                     </div>
                                                     <div className={styles.nameInfo}>
                                                         <span className={styles.name}>{memorial.nome}</span>
                                                         <span className={styles.dates}>{memorial.dataNascimento || '—'} — {memorial.dataMorte || '—'}</span>
+                                                    </div>
                                                     </div>
                                                 </td>
                                                 <td className={styles.locationCell}>

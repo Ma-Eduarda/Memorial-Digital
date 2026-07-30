@@ -211,10 +211,13 @@ h2 {
 }
 
 .nameCell {
+    min-width: 260px;
+}
+
+.nameContent {
     display: flex;
     align-items: center;
     gap: 16px;
-    min-width: 260px;
 }
 
 .avatar {
