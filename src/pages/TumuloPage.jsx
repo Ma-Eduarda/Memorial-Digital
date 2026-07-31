@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, Quote, Star, User } from 'lucide-react';
 import { getMemoriaisPorTumulo } from '../data/memoriaisStorage';
@@ -10,7 +11,14 @@ export default function TumuloPage() {
     catch { return localizacao || ''; }
   })();
 
-  const pessoas = getMemoriaisPorTumulo(decoded);
+  // Estado para armazenar e atualizar os dados em tempo real
+  const [pessoas, setPessoas] = useState([]);
+
+  // Busca os dados assim que a página é carregada
+  useEffect(() => {
+    const dadosAtualizados = getMemoriaisPorTumulo(decoded);
+    setPessoas(dadosAtualizados);
+  }, [decoded]);
 
   if (pessoas.length === 0) {
     return (

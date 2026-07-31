@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, MapPin, X, Map, Quote, Star } from 'lucide-react';
 import { getMemorialById } from '../data/memoriaisStorage';
 import styles from './MemorialPage.module.css';
@@ -17,9 +17,23 @@ const galleryImages = [
 export default function MemorialPage() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const memorial = getMemorialById(id);
+  
+  // Estados
+  const [memorial, setMemorial] = useState(null);
   const [activeTab, setActiveTab] = useState('bio');
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Busca os dados assim que a página é carregada
+  useEffect(() => {
+    const dadosAtualizados = getMemorialById(id);
+    setMemorial(dadosAtualizados);
+    setLoading(false);
+  }, [id]);
+
+  if (loading) {
+      return null; // Pequeno delay visual enquanto pega os dados
+  }
 
   if (!memorial) {
     return (
