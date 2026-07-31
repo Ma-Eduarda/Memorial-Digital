@@ -21,7 +21,6 @@ export default function Header() {
         { to: '/', label: 'Início' },
         { to: '/memoriais', label: 'Memoriais' },
         { to: '/mapa', label: 'Mapa do Cemitério' },
-        { to: '/admin', label: 'Administração' },
         { to: '/login', label: 'Login', icon: <LogIn size={16} /> },
       ];
 
