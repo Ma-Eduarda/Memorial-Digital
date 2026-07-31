@@ -1,10 +1,9 @@
 .page {
-    min-height: 100vh;
-    background: #f4f7f9; /* Fundo oficial */
+    background: #f4f7f9; 
 }
 
 .container {
-    max-width: 1300px; /* Um pouco mais largo para acomodar bem o mapa e o painel */
+    max-width: 1300px; 
     margin: 0 auto;
     padding: 0 24px;
 }

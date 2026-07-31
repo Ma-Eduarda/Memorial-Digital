@@ -6,12 +6,12 @@ import styles from './MemorialPage.module.css';
 import Button from '../components/Button';
 
 const galleryImages = [
-  { src: "https://images.pexels.com/photos/2259917/pexels-photo-2259917.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Foto histórica" },
-  { src: "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Jardim da Família" },
-  { src: "https://images.pexels.com/photos/2214376/pexels-photo-2214376.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Retrato oficial" },
-  { src: "https://images.pexels.com/photos/262367/pexels-photo-262367.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Vista do memorial" },
-  { src: "https://images.pexels.com/photos/534259/pexels-photo-534259.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Jardins" },
-  { src: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Homenagem" },
+  { src: "https://images.pexels.com/photos/8790805/pexels-photo-8790805.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Foto histórica" },
+  { src: "https://images.pexels.com/photos/8790818/pexels-photo-8790818.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Jardim da Família" },
+  { src: "https://images.pexels.com/photos/8790797/pexels-photo-8790797.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Retrato oficial" },
+  { src: "https://images.pexels.com/photos/6148913/pexels-photo-6148913.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Vista do memorial" },
+  { src: "https://images.pexels.com/photos/6149028/pexels-photo-6149028.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Jardins" },
+  { src: "https://images.pexels.com/photos/23174617/pexels-photo-23174617.jpeg?auto=compress&cs=tinysrgb&w=800", caption: "Homenagem" },
 ];
 
 export default function MemorialPage() {
