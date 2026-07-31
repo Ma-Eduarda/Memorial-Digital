@@ -24,8 +24,8 @@ function App() {
           <Route path="memoriais" element={<AllMemorialsPage />} />
           <Route path="tumulo/:localizacao" element={<TumuloPage />} />
           <Route path="/mapa" element={<MapPage />} />
-          <Route path="/login" element={<LoginPage />} />
         </Route>
+        <Route path="login" element={<LoginPage />} />
         <Route path="admin" element={<AdminDashboard />} />
         <Route path="admin/memoriais" element={<AdminMemoriais />} />
         <Route path="admin/relatorios" element={<AdminRelatorios />} />

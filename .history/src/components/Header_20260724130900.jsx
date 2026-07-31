@@ -22,7 +22,6 @@ export default function Header() {
         { to: '/memoriais', label: 'Memoriais' },
         { to: '/mapa', label: 'Mapa do Cemitério' },
         { to: '/admin', label: 'Administração' },
-        { to: '/login', label: 'Login', icon: <LogIn size={16} /> },
       ];
 
   return (
@@ -64,10 +63,18 @@ export default function Header() {
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {link.icon}
                 {link.label}
               </Link>
             ))}
+
+            <Link
+              to="/login"
+              className={`${styles.navLink} ${styles.loginButton}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <LogIn size={16} />
+              <span>Login</span>
+            </Link>
           </nav>
         </div>
       </div>

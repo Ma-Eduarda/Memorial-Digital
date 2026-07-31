@@ -74,9 +74,6 @@
 }
 
 .navLink {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
     text-decoration: none;
     padding: 10px 16px;
     border-radius: 20px;
@@ -88,6 +85,21 @@
 
 .navLink:hover {
     background: #0066cc;
+}
+
+.loginButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #0066cc;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.loginButton:hover {
+    background: #f5f9ff;
+    color: #004c99;
 }
 
 .navLinkActive {
