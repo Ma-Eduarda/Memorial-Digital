@@ -1,7 +1,6 @@
 /* O layout base dividindo a tela com a Sidebar */
 .adminLayout {
     display: flex;
-    min-height: 100vh;
     background: #f4f7f9;
 }
 
